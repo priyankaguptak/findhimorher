@@ -13,10 +13,7 @@
             <name>Sonatype Nexus Snapshots</name>
             <url>http://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
-        <repository>
-            <id>repo.codahale.com</id>
-            <url>http://repo.codahale.com/</url>
-        </repository>
+
     </repositories>
 
     <dependencies>
@@ -69,7 +66,7 @@
         <dependency>
             <groupId>com.googlecode.linkedin-j</groupId>
             <artifactId>linkedin-j-core</artifactId>
-            <version>1.0.416</version>
+            <version>1.0.417</version>
         </dependency>
         <dependency>
             <groupId>oauth.signpost</groupId>
