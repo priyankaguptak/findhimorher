@@ -1,6 +1,9 @@
 package com.build.something.resource;
 
 import com.build.something.facade.PeopleRanker;
+import com.build.something.view.AccessDenied;
+import com.build.something.view.HomeView;
+import com.build.something.view.Viewer;
 import com.yammer.metrics.annotation.Metered;
 
 import javax.ws.rs.GET;
@@ -8,11 +11,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.net.HttpURLConnection;
-import java.util.List;
 
 @Path("/search/people")
+@Produces(MediaType.TEXT_HTML)
 public class FindHimOrHerResource {
     private final PeopleRanker peopleRanker;
 
@@ -22,17 +23,23 @@ public class FindHimOrHerResource {
 
     @GET
     @Metered
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getSortedPeople(@QueryParam("fName") String fName,
-                                    @QueryParam("lName") String lName,
-                                    @QueryParam("association") String association) {
-        List<String> peopleList = null;
-        try {
-            peopleList = peopleRanker.getSortedPeopleList(fName, lName);
+    //@Produces(MediaType.APPLICATION_JSON)
+    public Viewer getSortedPeople(@QueryParam("id") String id) {
+//        List<String> peopleList = null;
+//        try {
+//            peopleList = peopleRanker.getSortedPeopleList(fName, lName);
+//
+//        } catch (Exception ex) {
+//            return Response.status(HttpURLConnection.HTTP_INTERNAL_ERROR).entity(ex).build();
+//        }
+        Viewer result = null;
+        if (id != null && id.equalsIgnoreCase("really")) {
+            result = new HomeView("secret viewer");
 
-        } catch (Exception ex) {
-            return Response.status(HttpURLConnection.HTTP_INTERNAL_ERROR).entity(ex).build();
+        } else {
+            result = new AccessDenied("Need a secret key to view this page!");
         }
-        return Response.ok(peopleList).build();
+
+        return result;
     }
 }

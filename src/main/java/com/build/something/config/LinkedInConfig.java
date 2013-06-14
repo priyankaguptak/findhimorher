@@ -1,5 +1,7 @@
 package com.build.something.config;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ajaypromodh
@@ -8,19 +10,12 @@ package com.build.something.config;
  * To change this template use File | Settings | File Templates.
  */
 public class LinkedInConfig {
-    private final String apiKey;
-    private final String secretKey;
-    private final String oAuthUserToken;
-    private final String oAuthUserSecret;
-    private final String oAuthSampleAccessKey;
-
-    public LinkedInConfig(String apiKey, String secretKey, String oAuthUserToken, String oAuthUserSecret, String oAuthSampleAccessKey) {
-        this.apiKey = apiKey;
-        this.secretKey = secretKey;
-        this.oAuthUserToken = oAuthUserToken;
-        this.oAuthUserSecret = oAuthUserSecret;
-        this.oAuthSampleAccessKey = oAuthSampleAccessKey;
-    }
+    @JsonProperty
+    private String apiKey;
+    @JsonProperty private String secretKey;
+    @JsonProperty private String oAuthUserToken;
+    @JsonProperty private String oAuthUserSecret;
+    @JsonProperty private String oAuthSampleAccessKey;
 
     public String getApiKey() {
         return apiKey;

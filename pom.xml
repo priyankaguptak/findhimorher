@@ -20,13 +20,19 @@
         <dependency>
             <groupId>com.yammer.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
-            <version>0.6.2-SNAPSHOT</version>
+            <version>0.6.2</version>
         </dependency>
         <dependency>
             <groupId>com.yammer.dropwizard</groupId>
             <artifactId>dropwizard-hibernate</artifactId>
-            <version>0.6.2-SNAPSHOT</version>
+            <version>0.6.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.yammer.dropwizard</groupId>
+            <artifactId>dropwizard-views</artifactId>
+            <version>0.6.2</version>
+        </dependency>
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -66,8 +72,9 @@
         <dependency>
             <groupId>com.googlecode.linkedin-j</groupId>
             <artifactId>linkedin-j-core</artifactId>
-            <version>1.0.417</version>
+            <version>1.0.416</version>
         </dependency>
+
         <dependency>
             <groupId>oauth.signpost</groupId>
             <artifactId>signpost-core</artifactId>

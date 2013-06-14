@@ -1,21 +1,6 @@
 http:
-  port: 8088
-  adminPort: 8089
-
-logging:
-  console:
-    enabled: true
-    threshold: DEBUG
-
-  file:
-    enabled: true
-    threshold: ALL
-    filenamePattern: /var/log/terapeakservice.log
-    maxFileSize: 50MB
-    retainedFileCount: 5
-
-  loggers:
-    "com.terapeak.platform": DEBUG
+  port: 8086
+  adminPort: 8087
 
 linkedInConfig:
   apiKey: kgaqqwflejmf

@@ -10,6 +10,7 @@ import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
+import com.yammer.dropwizard.views.ViewBundle;
 
 /**
  *
@@ -23,7 +24,7 @@ public class FindHimOrHerService extends Service<HimOrHerConfiguration> {
     public void initialize(Bootstrap<HimOrHerConfiguration> bootstrap) {
         bootstrap.setName("hello-world");
         bootstrap.addBundle(new AssetsBundle());
-
+        bootstrap.addBundle(new ViewBundle());
     }
 
     @Override
